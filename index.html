@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salt City Designs | Custom Shirts, Camping Buckets &amp; Handmade Goods</title>
+  <meta name="description" content="Custom shirts, glowing camping buckets, vinyl goods and handmade gifts, made to order in Saline, Michigan." />
+  <meta property="og:title" content="Salt City Designs" />
+  <meta property="og:description" content="Custom shirts, camping buckets and handmade goods, made to order in Saline, Michigan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://saltcitydesigns.com" />
+  <link rel="canonical" href="https://saltcitydesigns.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:      #2B2522;
+      --ink-deep: #1B1715;
+      --ember:    #E0612B;
+      --ember-dk: #C24F1E;
+      --cream:    #FAF6F0;
+      --sand:     #EFE6D8;
+      --stone:    #6B6159;
+      --line:     rgba(43,37,34,0.12);
+      --heading: 'Poppins', sans-serif;
+      --body:    'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); font-size: 16px; color: var(--ink); background: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 96px 0; }
+    .label { font-family: var(--heading); font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ember); margin-bottom: 14px; display: block; }
+    h2 { font-family: var(--heading); font-size: clamp(1.75rem,3.5vw,2.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+    .intro { font-size: 1.05rem; color: var(--stone); max-width: 580px; margin-bottom: 56px; }
+
+    nav { background: var(--ink-deep); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--heading); font-weight: 700; font-size: 1rem; color: #fff; }
+    .nav-logo span { color: var(--ember); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: #B9AFA6; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn { display: inline-block; font-family: var(--heading); font-weight: 600; color: #fff; background: var(--ember); border-radius: 3px; transition: background .2s; }
+    .btn:hover { background: var(--ember-dk); }
+    .nav-links .btn { font-size: .85rem; padding: 9px 22px; color: #fff; }
+
+    .hero { background: var(--ink-deep); padding: 112px 32px 96px; }
+    .hero-inner { max-width: 960px; margin: 0 auto; }
+    .hero .label { margin-bottom: 24px; }
+    .hero h1 { font-family: var(--heading); font-size: clamp(2.25rem,5vw,3.5rem); font-weight: 700; line-height: 1.12; color: #fff; max-width: 700px; margin-bottom: 28px; }
+    .hero h1 em { font-style: normal; color: var(--ember); }
+    .hero p { font-size: 1.1rem; color: #B9AFA6; max-width: 520px; margin-bottom: 44px; }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .hero .btn { font-size: .95rem; padding: 14px 32px; }
+    .link-quiet { font-size: .9rem; font-weight: 500; color: #B9AFA6; border-bottom: 1px solid rgba(185,175,166,.4); padding-bottom: 2px; transition: color .2s, border-color .2s; }
+    .link-quiet:hover { color: #fff; border-color: #fff; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 32px; }
+    .card h3 { font-family: var(--heading); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; }
+    .card p { color: var(--stone); font-size: .95rem; }
+    .card .tag { display: inline-block; margin-top: 16px; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ember-dk); background: #FCE9DF; padding: 4px 10px; border-radius: 3px; }
+
+    .how { background: var(--sand); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
+    .step { counter-increment: step; }
+    .step::before { content: counter(step); display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--heading); font-weight: 600; margin-bottom: 16px; }
+    .step h3 { font-family: var(--heading); font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .step p { color: var(--stone); font-size: .95rem; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-grid p { color: var(--stone); margin-bottom: 16px; }
+    .facts { list-style: none; border-top: 1px solid var(--line); }
+    .facts li { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+    .facts strong { display: block; font-family: var(--heading); font-weight: 600; }
+    .facts span { color: var(--stone); }
+
+    .contact { background: var(--ink-deep); color: #fff; text-align: center; }
+    .contact h2 { color: #fff; }
+    .contact p { color: #B9AFA6; max-width: 480px; margin: 0 auto 36px; }
+    .contact .btn { font-size: .95rem; padding: 14px 32px; }
+    .contact small { display: block; margin-top: 20px; color: #8C8279; font-size: .85rem; }
+
+    footer { background: #000; padding: 28px 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .8rem; color: #8C8279; }
+
+    @media (max-width: 680px) {
+      .nav-links a:not(.btn) { display: none; }
+      .section { padding: 64px 0; }
+      .hero { padding: 80px 24px 64px; }
+      .grid, .steps, .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .container, .nav-inner { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Salt City <span>Designs</span></a>
+    <div class="nav-links">
+      <a href="#makes">What We Make</a>
+      <a href="#how">How It Works</a>
+      <a href="#about">About</a>
+      <a href="mailto:pagefamily17@gmail.com?subject=Custom%20order%20request" class="btn">Order</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <span class="label">Handmade in Saline, Michigan</span>
+    <h1>Custom goods, made <em>just for you.</em></h1>
+    <p>Shirts, glowing camping buckets, vinyl goods and gifts, designed and made to order for friends, families and teams.</p>
+    <div class="hero-actions">
+      <a href="mailto:pagefamily17@gmail.com?subject=Custom%20order%20request" class="btn">Start a custom order</a>
+      <a href="#makes" class="link-quiet">See what we make &rarr;</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="makes">
+  <div class="container">
+    <span class="label">What We Make</span>
+    <h2>Made by hand, made to order.</h2>
+    <p class="intro">Every piece is designed with you, so nothing is off the shelf. Here is what is on the bench right now.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Custom Shirts</h3>
+        <p>Team shirts, family matching sets, event tees and gifts. Your colors, your names, your numbers.</p>
+        <span class="tag">Made to order</span>
+      </div>
+      <div class="card">
+        <h3>Camping Buckets</h3>
+        <p>Personalized buckets for the campsite, the cabin or the lake. Glowing versions available.</p>
+        <span class="tag">Made to order</span>
+      </div>
+      <div class="card">
+        <h3>Vinyl Goods</h3>
+        <p>Cups, tumblers, signs, decals and more, cut and applied by hand.</p>
+        <span class="tag">Made to order</span>
+      </div>
+      <div class="card">
+        <h3>Holiday &amp; Seasonal</h3>
+        <p>Glowing Christmas buckets and other limited seasonal pieces. Order early; they go quickly.</p>
+        <span class="tag">Seasonal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section how" id="how">
+  <div class="container">
+    <span class="label">How It Works</span>
+    <h2>Three steps, no surprises.</h2>
+    <p class="intro">Simple on purpose. You know the price and the timeline before anything gets made.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>Tell us your idea</h3>
+        <p>Send what you want, how many, and when you need it. Photos and inspiration welcome.</p>
+      </div>
+      <div class="step">
+        <h3>Approve the plan</h3>
+        <p>You get a price, a timeline and a design preview. Nothing starts until you say yes.</p>
+      </div>
+      <div class="step">
+        <h3>Pick it up or get it delivered</h3>
+        <p>Local pickup in Saline, or we will work out delivery together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="label">About</span>
+      <h2>Small shop, real people.</h2>
+      <p>Salt City Designs started with custom gear for local teens and teams, and it grew from there, one request at a time.</p>
+      <p>Everything is designed and made by hand in Saline, Michigan. If you can picture it, we can usually make it.</p>
+    </div>
+    <ul class="facts">
+      <li><strong>Where</strong><span>Saline, Michigan</span></li>
+      <li><strong>Best for</strong><span>Teams, families, gifts and events</span></li>
+      <li><strong>Ordering</strong><span>Custom, made to order</span></li>
+      <li><strong>Payment</strong><span>Venmo accepted</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <span class="label">Order</span>
+    <h2>Have something in mind?</h2>
+    <p>Tell us what you are picturing and when you need it. We will reply with a price and a plan.</p>
+    <a href="mailto:pagefamily17@gmail.com?subject=Custom%20order%20request" class="btn">Email your idea</a>
+    <small>Local orders and pickup in Saline, MI</small>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Salt City Designs &mdash; Saline, Michigan</span>
+  <span>A Salt City Services, LLC brand</span>
+</footer>
+
+</body>
+</html>
