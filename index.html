@@ -10,6 +10,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://saltcitydesigns.com" />
   <link rel="canonical" href="https://saltcitydesigns.com/" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:image" content="https://saltcitydesigns.com/assets/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -23,6 +26,7 @@
       --pop:      #E8751A;
       --teal:     #1FA9A6;
       --teal-dk:  #0F7C79;
+      --ocean:    #014F79;
       --cream:    #F5ECDD;
       --sand:     #EADBC3;
       --stone:    #5E564F;
@@ -42,8 +46,9 @@
 
     nav { background: var(--ink-deep); position: sticky; top: 0; z-index: 100; }
     .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: var(--heading); font-weight: 700; font-size: 1rem; color: #fff; }
-    .nav-logo span { color: var(--pop); }
+    .nav-logo { font-family: var(--heading); font-weight: 700; font-size: 1rem; color: #fff; display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 50%; display: block; }
+    .nav-logo span span { color: var(--pop); }
     .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a { font-size: .875rem; font-weight: 500; color: var(--muted); transition: color .2s; }
     .nav-links a:hover { color: #fff; }
@@ -52,11 +57,13 @@
     .nav-links .btn { font-size: .85rem; padding: 9px 22px; color: #fff; }
 
     .hero { background: var(--ink-deep); padding: 112px 32px 96px; }
-    .hero-inner { max-width: 960px; margin: 0 auto; }
+    .hero-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+    .hero-emblem { width: 280px; height: 280px; border-radius: 50%; flex-shrink: 0; }
     .hero .label, .contact .label { color: var(--teal); }
     .hero .label { margin-bottom: 24px; }
     .hero h1 { font-family: var(--heading); font-size: clamp(2.25rem,5vw,3.5rem); font-weight: 700; line-height: 1.12; color: #fff; max-width: 700px; margin-bottom: 28px; }
     .hero h1 em { font-style: normal; color: var(--pop); }
+    .hero-copy { min-width: 0; }
     .hero p { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 44px; }
     .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
     .hero .btn { font-size: .95rem; padding: 14px 32px; }
@@ -72,7 +79,7 @@
     .how { background: var(--sand); }
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
     .step { counter-increment: step; }
-    .step::before { content: counter(step); display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--heading); font-weight: 600; margin-bottom: 16px; }
+    .step::before { content: counter(step); display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--ocean); color: #fff; font-family: var(--heading); font-weight: 600; margin-bottom: 16px; }
     .step h3 { font-family: var(--heading); font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
     .step p { color: var(--stone); font-size: .95rem; }
 
@@ -91,6 +98,7 @@
 
     footer { background: #071E26; padding: 28px 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .8rem; color: #7F9AA0; }
 
+    @media (max-width: 820px) { .hero-emblem { display: none; } }
     @media (max-width: 680px) {
       .nav-links a:not(.btn) { display: none; }
       .section { padding: 64px 0; }
@@ -104,7 +112,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#top" class="nav-logo">Salt City <span>Designs</span></a>
+    <a href="#top" class="nav-logo"><img src="assets/logo-sd.png" alt="Salt City Designs logo" width="38" height="38" /><span>Salt City <span>Designs</span></span></a>
     <div class="nav-links">
       <a href="#makes">What We Make</a>
       <a href="#how">How It Works</a>
@@ -116,6 +124,7 @@
 
 <header class="hero" id="top">
   <div class="hero-inner">
+    <div class="hero-copy">
     <span class="label">Handmade in Saline, Michigan</span>
     <h1>Custom goods, made <em>just for you.</em></h1>
     <p>Shirts, glowing camping buckets, vinyl goods and gifts, designed and made to order for friends, families and teams.</p>
@@ -123,6 +132,8 @@
       <a href="mailto:pagefamily17@gmail.com?subject=Custom%20order%20request" class="btn">Start a custom order</a>
       <a href="#makes" class="link-quiet">See what we make &rarr;</a>
     </div>
+    </div>
+    <img class="hero-emblem" src="assets/logo-full.png" alt="Salt City Designs emblem" width="280" height="280" />
   </div>
 </header>
 
